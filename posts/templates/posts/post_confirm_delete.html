@@ -1,0 +1,10 @@
+{% extends "posts/base.html" %}
+
+{% block things %}
+<form method="POST">
+{% csrf_token %}
+
+<button type="submit">Delete</button>
+</form>
+<a href="{% url 'post_page' object.id %}">Cancel</a>
+{% endblock things %}
