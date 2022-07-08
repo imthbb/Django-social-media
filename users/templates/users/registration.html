@@ -1,0 +1,25 @@
+{% extends "posts/base.html" %}
+
+{% block things %}
+<legend for="id_username" class="leg_username">Username</legend>
+<legend for="id_password" class="leg_password">Password</legend>
+<legend for="id_password" class="leg_rep_password">Repeat password</legend>
+<span class="profile_shape"></span>
+<form method="POST">
+{% csrf_token %}
+<fieldset>
+{{ reg_form }}
+</fieldset>
+<button type="submit" class="sign_button reg_button">Register</button>
+</form>
+
+{% endblock things %}
+
+
+
+
+
+
+
+
+
