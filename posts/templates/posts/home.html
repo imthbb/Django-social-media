@@ -1,0 +1,14 @@
+{% extends "posts/base.html" %}
+{% block things %}
+<ul class='column'>
+
+{% for i in posts %}
+<li class='item'><a href="{% url 'post_page' i.id %}"><span class="bubble"><span class="top_bubble"></span><span class="left_line"></span><img class="prof_pic" src="{{ i.p_author.profile.prof_pic.url }}"><p class="title">{{ i.p_title|truncatechars:"40" }}</p><p class="author">{{ i.p_author }}</p>
+<p class="date">{{ i.p_date|date:"M d. Y" }}&nbsp;{{ i.p_date|date:"H:i" }}</p><span class="line"></span><p class="content">{{ i.p_content|truncatechars:"338" }}</p><span class='high'></span><span class='high2'></span></span></a></li>
+{% endfor %}
+</ul>
+<ul class='ul2'>
+<li><span class='box2'></span><span class="side_line"></span><p class="side_title">News:</p></li>
+<li><span class='box2'></span><span class="side_line"></span><p class="side_title">Trending:</p></li>
+</ul>
+{% endblock things %}
