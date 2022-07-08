@@ -1,0 +1,12 @@
+{% extends "posts/base.html" %}
+
+{% block things %}
+<form method="POST">
+{% csrf_token %}
+<fieldset>
+{{ form }}
+</fieldset>
+<button type="submit" class="sign_button post_button">Post</button>
+</form>
+
+{% endblock things %}
