@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" type="text/css" href="{% static 'posts/main.css' %}">
+{% block additional_css %}{% endblock additional_css %}</head>
+<body>
+
+<header><span class="header_highlight"></span><span class="header_border"></span>
+<ul class="navigation">
+{% if user.is_authenticated %}
+<li class="post"><a href="{% url 'create_post_page' %}"><span class="nav_bg n_post">Post</span></a></li>
+<li class="home"><a href="{% url 'home_page' %}"><span class="nav_bg n_home">Home</span></a></li>
+<li class="about"><a href=#><span class="nav_bg n_about">About</span></a></li>
+<li class="profile"><a href="{% url 'profile_page' %}"><span class="nav_bg n_prof">Profile</span></a></li>
+<li class="logout"><a href="{% url 'logout_page' %}"><span class="nav_bg n_logout">Log out</span></a></li>
+{% else %}
+<li class="home"><a href="{% url 'home_page' %}"><span class="nav_bg n_home">Home</span></a></li>
+<li class="about"><a href=#><span class="nav_bg n_about">About</span></a></li>
+<li class="login"><a href="{% url 'login_page' %}"><span class="nav_bg n_login">Log in</span></a></li>
+<li class="registration"><a href="{% url 'registration_page' %}"><span class="nav_bg n_reg">Register</span></a></li>
+{% endif %}
+</ul>
+</header>
+
+
+{% block things %}{% endblock things %}
+
+
+
+
+</body>
+</html>
