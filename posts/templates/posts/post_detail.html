@@ -1,0 +1,5 @@
+{% extends "posts/base.html" %}
+{% block things %}
+<span class='post_written'><p>{{ object.p_content }}</p></span>
+<span class="post_info"><p class="post_title">{{ object.p_title }}</p><p>{{ object.p_author }}</p><p>{{ object.p_date|date:"M d. Y" }}</p></span>
+{% endblock things %}
